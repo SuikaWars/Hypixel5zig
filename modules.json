@@ -1,0 +1,40 @@
+{
+  "modules": [
+    {
+      "id": "hypixel5zig",
+      "name": "%gamemode%",
+      "server": "hypixel.net",
+      "items": [
+        {
+          "type": "HypixelServer"
+        },
+        {
+          "type": "HypixelMap"
+        },
+        {
+          "type": "KILLS"
+        },
+        {
+          "type": "HypixelswKit"
+        },
+        {
+          "type": "HypixelswCageOpen"
+        },
+        {
+          "type": "COUNTDOWN",
+          "settings": [
+            {
+              "name": "showLargeCountdown",
+              "value": {
+                "showLargeCountdown": true
+              }
+            }
+          ]
+        },
+        {
+          "type": "WIN_MESSAGE"
+        }
+      ]
+    }
+  ]
+}
