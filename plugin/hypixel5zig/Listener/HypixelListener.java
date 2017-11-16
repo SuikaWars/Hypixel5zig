@@ -65,8 +65,10 @@ public class HypixelListener extends AbstractGameListener<GameMode> {
 		if (key.equals("wtfmap") && this.wtfmap == true && this.arcade == true) {
 			this.Game = match.get(0);
 			this.wtfmap = false;
+			this.arcade = false;
 		}else if(key.equals("wtfmap") && this.wtfmap == true){
 			this.Map = match.get(0);
+			this.wtfmap = false;
 		}
 	}
 	@Override
