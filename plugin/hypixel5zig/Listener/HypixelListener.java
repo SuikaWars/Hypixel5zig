@@ -10,6 +10,7 @@ import eu.the5zig.mod.server.GameListenerRegistry;
 
 public class HypixelListener extends AbstractGameListener<GameMode> {
 	private boolean wtfmap;
+	private boolean whereami;
 	private boolean arcade;
 	public static String Server;
 	public static String Map;
@@ -28,7 +29,7 @@ public class HypixelListener extends AbstractGameListener<GameMode> {
 	@Override
 	public void onMatch(GameMode gameMode, String key, IPatternResult match)
 	{
-		if (key.equals("whereami")) {
+		if (key.equals("whereami") && this.whereami == true) {
 			this.Server = match.get(0);
 			if(match.get(0).startsWith("mega") || match.get(0).startsWith("mini")){
 				getGameListener().sendAndIgnore("/wtfmap", "wtfmap");
@@ -61,6 +62,7 @@ public class HypixelListener extends AbstractGameListener<GameMode> {
 				this.Game = null;
 			}
 			getGameListener().switchLobby(match.get(0));
+			this.whereami = false;
 		}
 		if (key.equals("wtfmap") && this.wtfmap == true && this.arcade == true) {
 			this.Game = match.get(0);
@@ -76,6 +78,7 @@ public class HypixelListener extends AbstractGameListener<GameMode> {
 	{
 		this.Map = null;
 		this.Game = null;
+		this.whereami = true;
 		getGameListener().sendAndIgnore("/whereami", "whereami");
 		
 	}
