@@ -8,7 +8,7 @@ import eu.the5zig.mod.plugin.Plugin;
 import java.util.HashMap;
 import plugin.hypixel5zig.modules.*;
 
-@Plugin(name = "Hypixel5zig Beta", version = "1.0.0")
+@Plugin(name = "Hypixel5zig Beta", version = "1.0.1")
 public class Main{
 	@EventHandler(priority = EventHandler.Priority.LOW)
 	public void onLoad(LoadEvent event) {

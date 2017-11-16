@@ -7,6 +7,7 @@ import eu.the5zig.mod.server.AbstractGameListener;
 import eu.the5zig.mod.server.GameState;
 import eu.the5zig.mod.server.IPatternResult;
 import plugin.hypixel5zig.games.SkyWars;
+import plugin.hypixel5zig.Listener.HypixelListener;
 
 public class SkyWarsListener
 extends AbstractGameListener<SkyWars>
@@ -18,7 +19,7 @@ extends AbstractGameListener<SkyWars>
 
 	public boolean matchLobby(String lobby)
 	{
-		return lobby.equals("SkyWars") || lobby.startsWith("swlobby");
+		return lobby.startsWith("swlobby") || HypixelListener.Game.equals("SkyWars");
 	}
 
 	public void onMatch(SkyWars gameMode, String key, IPatternResult match)
@@ -54,12 +55,18 @@ extends AbstractGameListener<SkyWars>
 			gameMode.setState(GameState.STARTING);
 		}
 	}
-
+	public void onServerConnect(SkyWars gameMode)
+	{
+		gameMode.setKit(null);
+		gameMode.setWinTime(-1L);
+		gameMode.setWinner(null);
+		gameMode.setTime(-1L);
+		gameMode.setWinMessage(null);
+		gameMode.setState(GameState.LOBBY);
+		gameMode.setKills(0);
+	}
 	public void onTick(SkyWars gameMode)
 	{
-		if (getGameListener().getCurrentLobby().startsWith("swlobby")){
-			gameMode.setKit(null);
-		}
 		if ((gameMode.getState() == GameState.LOBBY) && 
 			(gameMode.getTime() != -1L) && (gameMode.getTime() - System.currentTimeMillis() < 0L))
 		{
@@ -71,11 +78,7 @@ extends AbstractGameListener<SkyWars>
 		}
 		if ((gameMode.getWinTime() != -1L) && (50000L + gameMode.getWinTime() - System.currentTimeMillis() < 0L))
 		{
-			gameMode.setWinTime(-1L);
-			gameMode.setWinner(null);
-			gameMode.setTime(-1L);
 			gameMode.setWinMessage(null);
-			gameMode.setState(GameState.LOBBY);
 		}
 	}
 }

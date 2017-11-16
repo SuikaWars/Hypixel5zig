@@ -13,6 +13,8 @@ public class HypixelListener extends AbstractGameListener<GameMode> {
 	private boolean arcade;
 	public static String Server;
 	public static String Map;
+	public static String Game;
+
 	@Override
 	public Class<GameMode> getGameMode() {
 		return null;
@@ -53,14 +55,15 @@ public class HypixelListener extends AbstractGameListener<GameMode> {
 					getGameListener().sendAndIgnore("/wtfmap", "wtfmap");
 					this.arcade = true;
 				}else{
-					getGameListener().switchLobby(game);
+					this.Game = game;
 				}
 			}else{
-				getGameListener().switchLobby(match.get(0));
+				this.Game = null;
 			}
+			getGameListener().switchLobby(match.get(0));
 		}
 		if (key.equals("wtfmap") && this.wtfmap == true && this.arcade == true) {
-			getGameListener().switchLobby(match.get(0));
+			this.Game = match.get(0);
 			this.wtfmap = false;
 		}else if(key.equals("wtfmap") && this.wtfmap == true){
 			this.Map = match.get(0);
@@ -70,6 +73,7 @@ public class HypixelListener extends AbstractGameListener<GameMode> {
 	public void onServerConnect(GameMode gameMode)
 	{
 		this.Map = null;
+		this.Game = null;
 		getGameListener().sendAndIgnore("/whereami", "whereami");
 		
 	}
