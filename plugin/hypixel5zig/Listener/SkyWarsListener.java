@@ -19,7 +19,10 @@ extends AbstractGameListener<SkyWars>
 
 	public boolean matchLobby(String lobby)
 	{
-		return lobby.startsWith("swlobby") || HypixelListener.Game.equals("SkyWars");
+		if(!(lobby.startsWith("swlobby")) && HypixelListener.Game == null){
+			return false;
+		}
+		return true;
 	}
 
 	public void onMatch(SkyWars gameMode, String key, IPatternResult match)
@@ -45,7 +48,11 @@ extends AbstractGameListener<SkyWars>
 			gameMode.setWinTime(System.currentTimeMillis());
 			gameMode.setState(GameState.FINISHED);
 		}
-		if (key.equals("SkyWars.kit"))
+		if (key.equals("SkyWars.kit.1"))
+		{
+			gameMode.setKit(match.get(0));
+		}
+		if (key.equals("SkyWars.kit.2"))
 		{
 			gameMode.setKit(match.get(0));
 		}

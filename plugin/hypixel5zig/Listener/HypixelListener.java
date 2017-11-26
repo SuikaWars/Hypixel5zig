@@ -31,7 +31,7 @@ public class HypixelListener extends AbstractGameListener<GameMode> {
 	{
 		if (key.equals("whereami") && this.whereami == true) {
 			this.Server = match.get(0);
-			if(match.get(0).startsWith("mega") || match.get(0).startsWith("mini")){
+			if((match.get(0).startsWith("mega") || match.get(0).startsWith("mini")) && !(match.get(0).contains("lobby"))){
 				getGameListener().sendAndIgnore("/wtfmap", "wtfmap");
 				this.wtfmap = true;
 				String[] Scoreboard = ChatColor.stripColor(The5zigAPI.getAPI().getSideScoreboard().getTitle()).split(" ");
@@ -80,6 +80,10 @@ public class HypixelListener extends AbstractGameListener<GameMode> {
 		this.Game = null;
 		this.whereami = true;
 		getGameListener().sendAndIgnore("/whereami", "whereami");
-		
+	}
+	@Override
+	public void onServerDisconnect(GameMode gameMode)
+	{
+		getGameListener().switchLobby(null);		
 	}
 }
