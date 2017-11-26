@@ -9,5 +9,5 @@ The 5zig mod plugin for the Hypixel Network.
 - kills
 - Kit
 - Win message
-## Download
+## Downloads
 [Download Hypixel5zig_Beta](https://github.com/SuikaWars/Hypixel5zig-Beta/releases/)
