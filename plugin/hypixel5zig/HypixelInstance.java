@@ -2,7 +2,7 @@ package plugin.hypixel5zig;
 
 import eu.the5zig.mod.server.ServerInstance;
 import eu.the5zig.mod.The5zigAPI;
-import plugin.hypixel5zig.Listener.*;
+import plugin.hypixel5zig.listener.*;
 
 public class HypixelInstance extends ServerInstance {
 	public static boolean IsHypixel(String host) {
@@ -12,6 +12,7 @@ public class HypixelInstance extends ServerInstance {
 	public void registerListeners() {
 		getGameListener().registerListener(new HypixelListener());
 		getGameListener().registerListener(new SkyWarsListener());
+		getGameListener().registerListener(new SpeedUHCListener());
 	}
 
 	@Override

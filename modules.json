@@ -9,16 +9,13 @@
           "type": "HypixelServer"
         },
         {
+          "type": "HypixelGame"
+        },
+        {
           "type": "HypixelMap"
         },
         {
-          "type": "KILLS"
-        },
-        {
-          "type": "HypixelswKit"
-        },
-        {
-          "type": "HypixelswCageOpen"
+          "type": "HypixelKit"
         },
         {
           "type": "COUNTDOWN",
@@ -32,7 +29,16 @@
           ]
         },
         {
+          "type": "KILLS"
+        },        
+        {
           "type": "WIN_MESSAGE"
+        },
+        {
+          "type": "HypixelCageOpen"
+        },
+        {
+          "type": "HypixelShotHP"
         }
       ]
     }

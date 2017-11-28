@@ -1,7 +1,7 @@
 package plugin.hypixel5zig.modules;
 
 import eu.the5zig.mod.modules.GameModeItem;
-import plugin.hypixel5zig.Listener.HypixelListener;
+import plugin.hypixel5zig.listener.HypixelListener;
 import eu.the5zig.mod.modules.StringItem;
 
 public class ServerItem extends StringItem {
