@@ -1,7 +1,7 @@
 package plugin.hypixel5zig.modules;
 
 import eu.the5zig.mod.modules.GameModeItem;
-import plugin.hypixel5zig.listener.HypixelListener;
+import plugin.hypixel5zig.Listener.HypixelListener;
 import eu.the5zig.mod.server.GameMode;
 import eu.the5zig.mod.server.GameState;
 import eu.the5zig.mod.The5zigAPI;

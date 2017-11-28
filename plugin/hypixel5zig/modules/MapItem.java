@@ -2,7 +2,7 @@ package plugin.hypixel5zig.modules;
 
 import eu.the5zig.mod.modules.GameModeItem;
 import eu.the5zig.mod.modules.StringItem;
-import plugin.hypixel5zig.listener.HypixelListener;
+import plugin.hypixel5zig.Listener.HypixelListener;
 
 public class MapItem extends StringItem {
 	public MapItem() {
