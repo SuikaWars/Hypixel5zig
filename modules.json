@@ -7,10 +7,7 @@
       "items": [
         {
           "type": "HypixelServer"
-        },
-        {
-          "type": "HypixelGame"
-        },
+        },   
         {
           "type": "HypixelMap"
         },
