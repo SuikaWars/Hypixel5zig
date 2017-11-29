@@ -36,32 +36,34 @@ public class HypixelListener extends AbstractGameListener<GameMode> {
 			if((match.get(0).startsWith("mega") || match.get(0).startsWith("mini")) && !(match.get(0).contains("lobby"))){
 				getGameListener().sendAndIgnore("/wtfmap", "wtfmap");
 				this.wtfmap = true;
-				String[] Scoreboard = ChatColor.stripColor(The5zigAPI.getAPI().getSideScoreboard().getTitle()).split(" ");
-				String game = "";
-				for(String key1 : Scoreboard){
-					if(game.equals("")){
-						game = game + key1.substring(0, 1).toUpperCase() + key1.substring(1).toLowerCase();
-					}else{
-						game = game + " " + key1.substring(0, 1).toUpperCase() + key1.substring(1).toLowerCase();
-					}
-				}
-				game = game.replace("Skywars","SkyWars").replace("The Tnt Games","The TNT Games").replace("Skyclash","SkyClash").replace("Blitz Sg","Blitz SG").replace("Hypixel","UHC Champions").replace("Cops And Crims","Cops and Crims").replace("Speed Uhc","Speed UHC").replace("Bed wars","Bed Wars").replace("Vampirez","VampireZ");
-				if(game.equals("The TNT Games")){
-					for(String key2 : The5zigAPI.getAPI().getSideScoreboard().getLines().keySet()){
-						key2 = ChatColor.stripColor(key2);
-						if(key2.startsWith("Game: ")){
-							game = key2.replace("Game: ","").replace("Bow Sple","Bow Spleef").replace("TNT Wiza","TNT Wizards");
+				if(The5zigAPI.getAPI().getSideScoreboard().getTitle() != null){
+					String[] Scoreboard = ChatColor.stripColor(The5zigAPI.getAPI().getSideScoreboard().getTitle()).split(" ");
+					String game = "";
+					for(String key1 : Scoreboard){
+						if(game.equals("")){
+							game = game + key1.substring(0, 1).toUpperCase() + key1.substring(1).toLowerCase();
+						}else{
+							game = game + " " + key1.substring(0, 1).toUpperCase() + key1.substring(1).toLowerCase();
 						}
 					}
-				}
-				if(game.equals("Arcade Games")){
-					getGameListener().sendAndIgnore("/wtfmap", "wtfmap");
-					this.arcade = true;
+					game = game.replace("Skywars","SkyWars").replace("The Tnt Games","The TNT Games").replace("Skyclash","SkyClash").replace("Blitz Sg","Blitz SG").replace("Hypixel","UHC Champions").replace("Cops And Crims","Cops and Crims").replace("Speed Uhc","Speed UHC").replace("Bed wars","Bed Wars").replace("Vampirez","VampireZ");
+					if(game.equals("The TNT Games")){
+						for(String key2 : The5zigAPI.getAPI().getSideScoreboard().getLines().keySet()){
+							key2 = ChatColor.stripColor(key2);
+							if(key2.startsWith("Game: ")){
+								game = key2.replace("Game: ","").replace("Bow Sple","Bow Spleef").replace("TNT Wiza","TNT Wizards");
+							}
+						}
+					}
+					if(game.equals("Arcade Games")){
+						getGameListener().sendAndIgnore("/wtfmap", "wtfmap");
+						this.arcade = true;
+					}else{
+						this.Game = game;
+					}
 				}else{
-					this.Game = game;
+					this.Game = null;
 				}
-			}else{
-				this.Game = null;
 			}
 			getGameListener().switchLobby(match.get(0));
 			this.whereami = false;
@@ -94,6 +96,16 @@ public class HypixelListener extends AbstractGameListener<GameMode> {
 		this.Server = null;	
 		this.Map = null;
 		this.Game = null;
+	}
+	@Override
+	public void onTeleport(GameMode gameMode , double x , double y , double z , float yaw , float pitch)
+	{
+		if(x == -23.5 && y == 31 && z == 21.5 && yaw == -90.0 && pitch == 0.0 || getGameListener().getCurrentLobby().contains("lobby")){
+			getGameListener().switchLobby("Limbo");
+			this.Server = "Limbo";	
+			this.Map = null;
+			this.Game = null;
+		}
 	}
 	public void onTick(GameMode gameMode)
 	{
