@@ -21,7 +21,7 @@ import org.apache.http.HttpResponse;
 
 @Plugin(name = "Hypixel5zig Beta", version = Main.version)
 public class Main{
-	public static final String version = "1.1.1";
+	public static final String version = "1.1.2";
 	@EventHandler(priority = EventHandler.Priority.LOW)
 	public void onLoad(LoadEvent event) {
 		The5zigAPI.getAPI().registerServerInstance(this, HypixelInstance.class);
