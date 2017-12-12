@@ -27,7 +27,13 @@
         },
         {
           "type": "KILLS"
-        },        
+        },
+        {
+          "type": "HypixelAssists"
+        },
+        {
+          "type": "HypixelCoins"
+        },
         {
           "type": "WIN_MESSAGE"
         },

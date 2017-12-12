@@ -79,7 +79,6 @@ public class HypixelListener extends AbstractGameListener<GameMode> {
 		if (key.equals("ShotHP")) {
 			this.ShotHP = match.get(0) + "," + match.get(1);
 			this.ShotHPTime = System.currentTimeMillis();
-
 		}
 	}
 	@Override

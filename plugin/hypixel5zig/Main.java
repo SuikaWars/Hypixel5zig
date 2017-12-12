@@ -3,6 +3,7 @@ package plugin.hypixel5zig;
 import eu.the5zig.mod.The5zigAPI;
 import eu.the5zig.mod.ModAPI;
 import eu.the5zig.mod.event.LoadEvent;
+import eu.the5zig.mod.event.WorldTickEvent;
 import eu.the5zig.mod.event.EventHandler;
 import eu.the5zig.mod.plugin.Plugin;
 import java.util.HashMap;
@@ -21,7 +22,9 @@ import org.apache.http.HttpResponse;
 
 @Plugin(name = "Hypixel5zig Beta", version = Main.version)
 public class Main{
-	public static final String version = "1.1.2";
+	private String latest;
+	private boolean update;
+	public static final String version = "1.1.3";
 	@EventHandler(priority = EventHandler.Priority.LOW)
 	public void onLoad(LoadEvent event) {
 		The5zigAPI.getAPI().registerServerInstance(this, HypixelInstance.class);
@@ -29,6 +32,8 @@ public class Main{
 		The5zigAPI.getAPI().registerModuleItem(this, "HypixelGame", GameItem.class, "Hypixel5zig");
 		The5zigAPI.getAPI().registerModuleItem(this, "HypixelMap", MapItem.class, "Hypixel5zig");
 		The5zigAPI.getAPI().registerModuleItem(this, "HypixelKit", KitItem.class, "Hypixel5zig");
+		The5zigAPI.getAPI().registerModuleItem(this, "HypixelAssists", AssistsItem.class, "Hypixel5zig");
+		The5zigAPI.getAPI().registerModuleItem(this, "HypixelCoins", CoinsItem.class, "Hypixel5zig");
 		The5zigAPI.getAPI().registerModuleItem(this, "HypixelCageOpen", CageOpenItem.class, "Hypixel5zig");
 		The5zigAPI.getAPI().registerModuleItem(this, "HypixelShotHP", ShotHP.class, "Hypixel5zig");
 
@@ -38,6 +43,7 @@ public class Main{
 			CloseableHttpClient client = HttpClients.createDefault();
 			HttpResponse result = client.execute(getlatest);
 			JSONObject json = new JSONObject(EntityUtils.toString(result.getEntity()));
+			this.latest = json.getString("tag_name").replace("v","");
 			String[] ver = json.getString("tag_name").replace("v","").split("\\.");
 			String[] cver = version.split("\\.");
 			int ver_major1 = Integer.parseInt(ver[0]);
@@ -54,12 +60,21 @@ public class Main{
 			{
 				The5zigAPI.getAPI().createOverlay().displayMessageAndSplit("Hypixel5zig Beta\n" + The5zigAPI.getAPI().translate("hypixel5zig.update"));
 				The5zigAPI.getLogger().info("Hypixel5zig Beta: " + The5zigAPI.getAPI().translate("hypixel5zig.update"));
+				this.update = true;
+
 			}else{
 				The5zigAPI.getAPI().createOverlay().displayMessageAndSplit("Hypixel5zig Beta\n" + The5zigAPI.getAPI().translate("hypixel5zig.higherversion"));
 				The5zigAPI.getLogger().info("Hypixel5zig Beta: " + The5zigAPI.getAPI().translate("hypixel5zig.higherversion"));
 			}
 		} catch (IOException r) {
 			The5zigAPI.getLogger().warn("Cannot check for updates", r);
+		}
+	}
+	public void onWorldTick(WorldTickEvent event) {
+		if(this.update == true){
+			The5zigAPI.getAPI().messagePlayer("[Hypixel5zig] " + The5zigAPI.getAPI().translate("hypixel5zig.update") + ": \u00A7" + this.latest);
+			The5zigAPI.getLogger().info("[Hypixel5zig] " + The5zigAPI.getAPI().translate("hypixel5zig.update") + ": \u00A7" + this.latest);
+			this.update = false;
 		}
 	}
 }
