@@ -1,4 +1,4 @@
-# Hypixel5zig-Beta
+# Hypixel5zig
 ## Select Language: [English](README.md) [日本語](md/ja_JP.md)
 The 5zig mod plugin for the Hypixel Network.
 ## Features
@@ -22,4 +22,4 @@ The 5zig mod plugin for the Hypixel Network.
 - Earned Coins
 - Cage open countdown(Teams)
 ## Downloads
-[Download Hypixel5zig_Beta](https://github.com/SuikaWars/Hypixel5zig-Beta/releases/)
+[Download Hypixel5zig](https://github.com/SuikaWars/Hypixel5zig/releases/)
