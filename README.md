@@ -1,4 +1,5 @@
 # Hypixel5zig-Beta
+## Select Language: [English](README.md) [日本語](md/ja_JP.md)
 The 5zig mod plugin for the Hypixel Network.
 ## Features
 ### General
@@ -11,7 +12,7 @@ The 5zig mod plugin for the Hypixel Network.
 - Kit
 - Win message
 - Earned Coins
-- Cage open countdown(Teams)
+- Cage open countdown(Teams/Mega/Ranked)
 ### SpeedUHC
 - Countdown
 - Kills
