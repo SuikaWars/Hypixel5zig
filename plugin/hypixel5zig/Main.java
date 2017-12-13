@@ -20,11 +20,11 @@ import org.apache.http.util.EntityUtils;
 import org.apache.http.client.ResponseHandler;
 import org.apache.http.HttpResponse;
 
-@Plugin(name = "Hypixel5zig Beta", version = Main.version)
+@Plugin(name = "Hypixel5zig", version = Main.version)
 public class Main{
 	private String latest;
 	private boolean update;
-	public static final String version = "1.1.3";
+	public static final String version = "1.1.4";
 	@EventHandler(priority = EventHandler.Priority.LOW)
 	public void onLoad(LoadEvent event) {
 		The5zigAPI.getAPI().registerServerInstance(this, HypixelInstance.class);
@@ -37,7 +37,7 @@ public class Main{
 		The5zigAPI.getAPI().registerModuleItem(this, "HypixelCageOpen", CageOpenItem.class, "Hypixel5zig");
 		The5zigAPI.getAPI().registerModuleItem(this, "HypixelShotHP", ShotHP.class, "Hypixel5zig");
 
-		HttpGet getlatest = new HttpGet("https://api.github.com/repos/SuikaWars/Hypixel5zig-Beta/releases/latest");
+		HttpGet getlatest = new HttpGet("https://api.github.com/repos/SuikaWars/Hypixel5zig/releases/latest");
 		getlatest.setHeader("Accept", "application/json");
 		try {
 			CloseableHttpClient client = HttpClients.createDefault();
