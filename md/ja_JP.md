@@ -1,5 +1,5 @@
 # Hypixel5zig
-## Select Language: [English](https://github.com/SuikaWars/Hypixel5zig-Beta/blob/master/README.md) [日本語](ja_JP.md)
+## Select Language: [English](en_US.md) [日本語](ja_JP.md)
 Hypixel Network向けThe 5zig Modのプラグイン
 ## 仕様
 ### 一般
