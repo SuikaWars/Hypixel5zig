@@ -1,12 +1,12 @@
 package ga.hypixel5zig.modules;
 
 import eu.the5zig.mod.modules.GameModeItem;
-import plugin.hypixel5zig.Listener.HypixelListener;
 import eu.the5zig.mod.server.GameMode;
 import eu.the5zig.mod.server.GameState;
 import eu.the5zig.mod.The5zigAPI;
 import eu.the5zig.mod.modules.LargeTextItem;
 import ga.hypixel5zig.games.Hypixel;
+import ga.hypixel5zig.Listener.HypixelListener;
 
 public class CageOpenItem extends LargeTextItem<Hypixel> {
 	public CageOpenItem() {
