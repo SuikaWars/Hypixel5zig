@@ -1,8 +1,8 @@
-package plugin.hypixel5zig.modules;
+package ga.hypixel5zig.modules;
 
 import eu.the5zig.mod.modules.GameModeItem;
-import plugin.hypixel5zig.Listener.HypixelListener;
 import eu.the5zig.mod.modules.StringItem;
+import ga.hypixel5zig.Listener.HypixelListener;
 
 public class GameItem extends StringItem {
 	public GameItem() {
