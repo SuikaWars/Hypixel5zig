@@ -1,7 +1,7 @@
 package ga.hypixel5zig.games;
 
 import eu.the5zig.mod.server.GameMode;
-import plugin.hypixel5zig.games.Hypixel;
+import ga.hypixel5zig.games.Hypixel;
 
 public class SpeedUHC extends Hypixel {
 	@Override
