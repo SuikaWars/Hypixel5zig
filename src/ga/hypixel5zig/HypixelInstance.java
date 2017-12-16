@@ -1,8 +1,8 @@
-package plugin.hypixel5zig;
+package ga.hypixel5zig;
 
 import eu.the5zig.mod.server.ServerInstance;
 import eu.the5zig.mod.The5zigAPI;
-import plugin.hypixel5zig.Listener.*;
+import ga.hypixel5zig.Listener.*;
 
 public class HypixelInstance extends ServerInstance {
 	public static boolean IsHypixel(String host) {
