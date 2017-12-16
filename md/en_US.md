@@ -1,5 +1,5 @@
 # Hypixel5zig
-## Select Language: [English](md/en_US.md) [日本語](md/ja_JP.md)
+## Select Language: [English](en_US.md) [日本語](ja_JP.md)
 The 5zig mod plugin for the Hypixel Network.
 ## Features
 ### General

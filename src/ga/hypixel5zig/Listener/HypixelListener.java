@@ -1,4 +1,4 @@
-package plugin.hypixel5zig.Listener;
+package ga.hypixel5zig.Listener;
 
 import eu.the5zig.mod.server.AbstractGameListener;
 import eu.the5zig.mod.server.GameMode;

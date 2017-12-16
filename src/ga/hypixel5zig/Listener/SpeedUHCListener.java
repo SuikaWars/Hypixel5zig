@@ -1,4 +1,4 @@
-package plugin.hypixel5zig.Listener;
+package ga.hypixel5zig.Listener;
 
 import com.mojang.authlib.GameProfile;
 import eu.the5zig.mod.ModAPI;
@@ -6,22 +6,22 @@ import eu.the5zig.mod.The5zigAPI;
 import eu.the5zig.mod.server.AbstractGameListener;
 import eu.the5zig.mod.server.GameState;
 import eu.the5zig.mod.server.IPatternResult;
-import plugin.hypixel5zig.games.SkyWars;
+import ga.hypixel5zig.games.SpeedUHC;
 
-public class SkyWarsListener
-extends AbstractGameListener<SkyWars>
+public class SpeedUHCListener
+extends AbstractGameListener<SpeedUHC>
 {
-	public Class<SkyWars> getGameMode()
+	public Class<SpeedUHC> getGameMode()
 	{
-		return SkyWars.class;
+		return SpeedUHC.class;
 	}
 
 	public boolean matchLobby(String lobby)
 	{
-		return lobby.startsWith("swlobby") || (HypixelListener.Game != null && HypixelListener.Game.equals("SkyWars"));
+		return lobby.startsWith("speeduhclobby") || (HypixelListener.Game != null && HypixelListener.Game.equals("Speed UHC"));
 	}
 
-	public void onMatch(SkyWars gameMode, String key, IPatternResult match)
+	public void onMatch(SpeedUHC gameMode, String key, IPatternResult match)
 	{
 		if (key.equals("starting")) {
 			gameMode.setTime(System.currentTimeMillis() + Integer.parseInt(match.get(0)) * 1000);
@@ -29,7 +29,7 @@ extends AbstractGameListener<SkyWars>
 		if (key.equals("canceled")) {
 			gameMode.setTime(-1L);
 		}
-		if (key.equals("SkyWars.start"))
+		if (key.equals("SpeedUHC.start"))
 		{
 			gameMode.setState(GameState.GAME);
 			gameMode.setTime(System.currentTimeMillis());
@@ -63,7 +63,7 @@ extends AbstractGameListener<SkyWars>
 			gameMode.setState(GameState.STARTING);
 		}
 	}
-	public void onServerConnect(SkyWars gameMode)
+	public void onServerConnect(SpeedUHC gameMode)
 	{
 		gameMode.setKit(null);
 		gameMode.setWinTime(-1L);
@@ -74,7 +74,7 @@ extends AbstractGameListener<SkyWars>
 		gameMode.setAssists(0);
 		gameMode.setEarnedCoins(0);
 	}
-	public void onTick(SkyWars gameMode)
+	public void onTick(SpeedUHC gameMode)
 	{
 		if ((gameMode.getState() == GameState.LOBBY) && 
 			(gameMode.getTime() != -1L) && (gameMode.getTime() - System.currentTimeMillis() < 0L))

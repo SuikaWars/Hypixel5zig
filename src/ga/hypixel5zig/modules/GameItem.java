@@ -1,24 +1,24 @@
-package plugin.hypixel5zig.modules;
+package ga.hypixel5zig.modules;
 
 import eu.the5zig.mod.modules.GameModeItem;
 import eu.the5zig.mod.modules.StringItem;
-import plugin.hypixel5zig.Listener.HypixelListener;
+import ga.hypixel5zig.Listener.HypixelListener;
 
-public class MapItem extends StringItem {
-	public MapItem() {
+public class GameItem extends StringItem {
+	public GameItem() {
 		super();
 	}
 	@Override
 	protected Object getValue(boolean dummy) {
 		if (dummy) {
-			return "Tribute";
+			return "SpeedUHC";
 		}
-		return HypixelListener.Map;
+		return HypixelListener.Game;
 	}
 
 	@Override
 	public String getTranslation()
 	{
-		return "ingame.map";
+		return "ingame.game";
 	}
 }

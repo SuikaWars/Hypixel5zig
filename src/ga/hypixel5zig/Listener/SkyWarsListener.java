@@ -1,4 +1,4 @@
-package plugin.hypixel5zig.Listener;
+package ga.hypixel5zig.Listener;
 
 import com.mojang.authlib.GameProfile;
 import eu.the5zig.mod.ModAPI;
@@ -6,22 +6,22 @@ import eu.the5zig.mod.The5zigAPI;
 import eu.the5zig.mod.server.AbstractGameListener;
 import eu.the5zig.mod.server.GameState;
 import eu.the5zig.mod.server.IPatternResult;
-import plugin.hypixel5zig.games.SpeedUHC;
+import ga.hypixel5zig.games.SkyWars;
 
-public class SpeedUHCListener
-extends AbstractGameListener<SpeedUHC>
+public class SkyWarsListener
+extends AbstractGameListener<SkyWars>
 {
-	public Class<SpeedUHC> getGameMode()
+	public Class<SkyWars> getGameMode()
 	{
-		return SpeedUHC.class;
+		return SkyWars.class;
 	}
 
 	public boolean matchLobby(String lobby)
 	{
-		return lobby.startsWith("speeduhclobby") || (HypixelListener.Game != null && HypixelListener.Game.equals("Speed UHC"));
+		return lobby.startsWith("swlobby") || (HypixelListener.Game != null && HypixelListener.Game.equals("SkyWars"));
 	}
 
-	public void onMatch(SpeedUHC gameMode, String key, IPatternResult match)
+	public void onMatch(SkyWars gameMode, String key, IPatternResult match)
 	{
 		if (key.equals("starting")) {
 			gameMode.setTime(System.currentTimeMillis() + Integer.parseInt(match.get(0)) * 1000);
@@ -29,7 +29,7 @@ extends AbstractGameListener<SpeedUHC>
 		if (key.equals("canceled")) {
 			gameMode.setTime(-1L);
 		}
-		if (key.equals("SpeedUHC.start"))
+		if (key.equals("SkyWars.start"))
 		{
 			gameMode.setState(GameState.GAME);
 			gameMode.setTime(System.currentTimeMillis());
@@ -63,7 +63,7 @@ extends AbstractGameListener<SpeedUHC>
 			gameMode.setState(GameState.STARTING);
 		}
 	}
-	public void onServerConnect(SpeedUHC gameMode)
+	public void onServerConnect(SkyWars gameMode)
 	{
 		gameMode.setKit(null);
 		gameMode.setWinTime(-1L);
@@ -74,7 +74,7 @@ extends AbstractGameListener<SpeedUHC>
 		gameMode.setAssists(0);
 		gameMode.setEarnedCoins(0);
 	}
-	public void onTick(SpeedUHC gameMode)
+	public void onTick(SkyWars gameMode)
 	{
 		if ((gameMode.getState() == GameState.LOBBY) && 
 			(gameMode.getTime() != -1L) && (gameMode.getTime() - System.currentTimeMillis() < 0L))

@@ -1,9 +1,9 @@
-package plugin.hypixel5zig.modules;
+package ga.hypixel5zig.modules;
 
 import eu.the5zig.mod.modules.GameModeItem;
 import eu.the5zig.mod.server.GameMode;
 import eu.the5zig.mod.server.GameState;
-import plugin.hypixel5zig.games.Hypixel;
+import ga.hypixel5zig.games.Hypixel;
 
 public class AssistsItem extends GameModeItem<Hypixel> {
 	public AssistsItem() {
