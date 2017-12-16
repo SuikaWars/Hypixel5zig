@@ -1,4 +1,4 @@
-package plugin.hypixel5zig.Listener;
+package ga.hypixel5zig.Listener;
 
 import com.mojang.authlib.GameProfile;
 import eu.the5zig.mod.ModAPI;
