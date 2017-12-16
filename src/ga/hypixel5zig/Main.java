@@ -1,4 +1,4 @@
-package plugin.hypixel5zig;
+package ga.hypixel5zig;
 
 import eu.the5zig.mod.The5zigAPI;
 import eu.the5zig.mod.ModAPI;
@@ -6,12 +6,11 @@ import eu.the5zig.mod.event.LoadEvent;
 import eu.the5zig.mod.event.WorldTickEvent;
 import eu.the5zig.mod.event.EventHandler;
 import eu.the5zig.mod.plugin.Plugin;
-import java.util.HashMap;
-import plugin.hypixel5zig.modules.*;
+import ga.hypixel5zig.modules.*;
 
 import java.io.*;
+import java.util.HashMap;
 import java.util.ArrayList;
-import java.io.IOException;
 import org.json.JSONObject;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
