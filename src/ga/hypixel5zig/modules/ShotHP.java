@@ -1,11 +1,11 @@
-package plugin.hypixel5zig.modules;
+package ga.hypixel5zig.modules;
 
 import eu.the5zig.mod.modules.GameModeItem;
-import plugin.hypixel5zig.Listener.HypixelListener;
 import eu.the5zig.mod.modules.StringItem;
 import eu.the5zig.mod.The5zigAPI;
 import eu.the5zig.mod.modules.LargeTextItem;
 import eu.the5zig.mod.server.GameMode;
+import ga.hypixel5zig.Listener.HypixelListener;
 
 public class ShotHP extends LargeTextItem<GameMode> {
 	public ShotHP() {
