@@ -6,7 +6,7 @@ import eu.the5zig.mod.The5zigAPI;
 import eu.the5zig.mod.server.AbstractGameListener;
 import eu.the5zig.mod.server.GameState;
 import eu.the5zig.mod.server.IPatternResult;
-import plugin.hypixel5zig.games.SpeedUHC;
+import ga.hypixel5zig.games.SpeedUHC;
 
 public class SpeedUHCListener
 extends AbstractGameListener<SpeedUHC>
