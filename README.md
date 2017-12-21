@@ -13,7 +13,7 @@ The 5zig mod plugin for the Hypixel Network.
 - Win message
 - Earned Coins
 - Cage open countdown(Teams/Mega/Ranked)
-### SpeedUHC
+### Speed UHC
 - Countdown
 - Kills
 - Assists
