@@ -13,7 +13,7 @@ Hypixel Network向けThe 5zig Modのプラグイン
 - Win message
 - 獲得コイン
 - ケージが開くまでの時間(Teams/Mega/Ranked)
-### SpeedUHC
+### Speed UHC
 - カウントダウン
 - Kills
 - Assists
