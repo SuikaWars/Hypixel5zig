@@ -21,5 +21,43 @@ The 5zig mod plugin for the Hypixel Network.
 - Win message
 - Earned Coins
 - Cage open countdown(Teams)
+### Mini Walls
+- Countdown
+- Kills
+- Win message
+- Team
+- Earned Coins
+- (Deaths)
+### TNT Run
+- Countdown
+- Earned Coins
+- (Win message)
+### PVP Run
+- Countdown
+- Win message
+- Kills
+- Earned Coins
+### Bow Spleef
+- Countdown
+- Earned Coins
+- (Win message)
+### TNT Tag
+- Countdown
+- Win message
+- Earned Coins
+### TNT Wizards
+- Countdown
+- Win message
+- Kills
+- Assists
+- Team
+- Earned Coins
+- (Deaths)
+### Build Battle
+- Countdown
+- Earned Coins
+- (Theme) - Coming soon
+
+() - not work
 ## Downloads
 [Download Hypixel5zig](https://github.com/SuikaWars/Hypixel5zig/releases/)
