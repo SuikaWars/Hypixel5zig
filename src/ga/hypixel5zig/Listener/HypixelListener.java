@@ -46,7 +46,7 @@ public class HypixelListener extends AbstractGameListener<GameMode> {
 							game = game + " " + key1.substring(0, 1).toUpperCase() + key1.substring(1).toLowerCase();
 						}
 					}
-					game = game.replace("Skywars","SkyWars").replace("The Tnt Games","The TNT Games").replace("Skyclash","SkyClash").replace("Blitz Sg","Blitz SG").replace("Hypixel","UHC Champions").replace("Cops And Crims","Cops and Crims").replace("Speed Uhc","Speed UHC").replace("Bed wars","Bed Wars").replace("Vampirez","VampireZ");
+					game = game.replace("Skywars","SkyWars").replace("Skyclash","SkyClash").replace("Blitz Sg","Blitz SG").replace("Hypixel","UHC Champions").replace("Speed Uhc","Speed UHC").replace("Vampirez","VampireZ").replace("Tnt","TNT").replace(" The"," the").replace(" And"," and");
 					if(game.equals("The TNT Games")){
 						for(String key2 : The5zigAPI.getAPI().getSideScoreboard().getLines().keySet()){
 							key2 = ChatColor.stripColor(key2);
@@ -72,6 +72,7 @@ public class HypixelListener extends AbstractGameListener<GameMode> {
 			this.Game = match.get(0);
 			this.wtfmap = false;
 			this.arcade = false;
+			getGameListener().switchLobby(getGameListener().getCurrentLobby());
 		}else if(key.equals("wtfmap") && this.wtfmap == true){
 			this.Map = match.get(0);
 			this.wtfmap = false;

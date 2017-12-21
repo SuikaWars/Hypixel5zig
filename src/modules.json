@@ -26,7 +26,13 @@
           ]
         },
         {
+          "type": "HypixelTeam"
+        },
+        {
           "type": "KILLS"
+        },
+        {
+          "type": "DEATHS"
         },
         {
           "type": "HypixelAssists"

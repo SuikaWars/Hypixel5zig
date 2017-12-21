@@ -7,6 +7,8 @@ public abstract class Hypixel extends GameMode {
 	private long CageOpenTime;
 	private int Assists;
 	private int EarnedCoins;
+	private long winTime;
+	private String Team;
 	public void setKit(String Kit1)
 	{
 		Kit = Kit1;
@@ -38,5 +40,21 @@ public abstract class Hypixel extends GameMode {
 	public int getEarnedCoins()
 	{
 		return EarnedCoins;
+	}
+	public long getWinTime()
+	{
+		return this.winTime;
+	}
+	public void setWinTime(long winTime1)
+	{
+		winTime = winTime1;
+	}
+	public void setTeam(String team)
+	{
+		Team = team;
+	}
+	public String getTeam()
+	{
+		return Team;
 	}
 }

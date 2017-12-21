@@ -8,13 +8,4 @@ public class SpeedUHC extends Hypixel {
 	public String getName() {
 		return "Speed UHC";
 	}
-	private long winTime;
-	public long getWinTime()
-	{
-		return this.winTime;
-	}
-	public void setWinTime(long winTime1)
-	{
-		winTime = winTime1;
-	}
 }
