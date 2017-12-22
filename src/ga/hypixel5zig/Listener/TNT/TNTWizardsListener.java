@@ -12,7 +12,6 @@ import ga.hypixel5zig.games.TNT.TNTWizards;
 public class TNTWizardsListener
 extends AbstractGameListener<TNTWizards>
 {
-	private boolean rejoin;
 	public Class<TNTWizards> getGameMode()
 	{
 		return TNTWizards.class;
@@ -22,56 +21,58 @@ extends AbstractGameListener<TNTWizards>
 	{
 		if(HypixelListener.Game != null && HypixelListener.Game.equals("Wizards")){
 			HypixelListener.Game = "TNT Wizards";
+			this.rejoin = true;
+			The5zigAPI.getLogger().info("[Hypixel5zig] Rejoin is not supported");
 		}
 		return HypixelListener.Game != null && HypixelListener.Game.equals("TNT Wizards");
 	}
+	private boolean rejoin;
 	public void onMatch(TNTWizards gameMode, String key, IPatternResult match)
 	{
 		if(!(this.rejoin == true)){
-		if (key.equals("starting")) {
-			gameMode.setTime(System.currentTimeMillis() + Integer.parseInt(match.get(0)) * 1000);
-		}
-		if (key.equals("canceled")) {
-			gameMode.setTime(-1L);
-		}
-		if (key.equals("TNT.start"))
-		{
-			gameMode.setState(GameState.GAME);
-			gameMode.setTime(System.currentTimeMillis());
+			if (key.equals("starting")) {
+				gameMode.setTime(System.currentTimeMillis() + Integer.parseInt(match.get(0)) * 1000);
+			}
+			if (key.equals("canceled")) {
+				gameMode.setTime(-1L);
+			}
+			if (key.equals("TNT.start"))
+			{
+				gameMode.setState(GameState.GAME);
+				gameMode.setTime(System.currentTimeMillis());
+			}
+			if (key.equals("coin")) {
+				gameMode.setEarnedCoins(gameMode.getEarnedCoins() + Integer.parseInt(match.get(0)));
+			}
+			if (key.startsWith("Wizards.kill.")) {
+				gameMode.setKills(gameMode.getKills() + 1);
+			}
+			if (key.equals("Wizards.assist")) {
+				gameMode.setAssists(gameMode.getAssists() + 1);
+			}
+			if (key.startsWith("Wizards.death.")) {
+				gameMode.setDeaths(gameMode.getDeaths() + 1);
+			}
+			if (key.startsWith("Wizards.kit.")) {
+				gameMode.setKit(match.get(0));
+			}
+			if (key.startsWith("Wizards.team.")) {
+				if(match.get(0).equals("Red")){
+					gameMode.setTeam("\u00A7cRed");
+				}else if(match.get(0).equals("Blue")){
+					gameMode.setTeam("\u00A79Blue");
+				}else{
+					gameMode.setTeam(match.get(0));
+				}
+			}
 		}
 		if (key.startsWith("win."))
 		{
-			gameMode.setWinner(match.get(0) + " Team");
 			gameMode.setWinTime(System.currentTimeMillis());
-			gameMode.setState(GameState.FINISHED);	
-		}
-		if (key.equals("coin")) {
-			gameMode.setEarnedCoins(gameMode.getEarnedCoins() + Integer.parseInt(match.get(0)));
-		}
-		if (key.startsWith("Wizards.kill.")) {
-			gameMode.setKills(gameMode.getKills() + 1);
-		}
-		if (key.equals("Wizards.assist")) {
-			gameMode.setAssists(gameMode.getAssists() + 1);
-		}
-		if (key.startsWith("Wizards.death.")) {
-			gameMode.setDeaths(gameMode.getDeaths() + 1);
-		}
-		if (key.startsWith("Wizards.kit.")) {
-			gameMode.setKit(match.get(0));
-		}
-		if (key.startsWith("Wizards.team.")) {
-			if(match.get(0).equals("Red")){
-				gameMode.setTeam("\u00A7cRed");
-			}else if(match.get(0).equals("Blue")){
-				gameMode.setTeam("\u00A71Blue");
-			}else{
-				gameMode.setTeam(match.get(0));
+			gameMode.setWinner(match.get(0) + " Team");
+			if(!(this.rejoin == true)){
+				gameMode.setState(GameState.FINISHED);
 			}
-		}
-		}
-		if(key.equals("Wizards.rejoin")){
-			this.rejoin = true;
 		}
 	}
 	public void onServerConnect(TNTWizards gameMode)
@@ -85,6 +86,7 @@ extends AbstractGameListener<TNTWizards>
 		gameMode.setKit(null);
 		gameMode.setTeam(null);
 		gameMode.setEarnedCoins(0);
+		this.rejoin = false;
 	}
 	public void onTick(TNTWizards gameMode)
 	{

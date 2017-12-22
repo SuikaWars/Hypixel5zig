@@ -60,7 +60,7 @@ extends AbstractGameListener<MiniWalls>
 			gameMode.setEarnedCoins(gameMode.getEarnedCoins() + Integer.parseInt(match.get(0)));
 		}
 	}
-	public void onTitle(MiniWalls gameMode)
+	public void onServerConnect(MiniWalls gameMode)
 	{
 		gameMode.setWinTime(-1L);
 		gameMode.setWinner(null);
@@ -69,6 +69,8 @@ extends AbstractGameListener<MiniWalls>
 		gameMode.setKills(0);
 		gameMode.setDeaths(0);
 		gameMode.setTeam(null);
+		gameMode.setShotHP(null);
+		gameMode.setShotHPTime(-1);
 		gameMode.setEarnedCoins(0);
 	}
 	public void onTitle(MiniWalls gameMode, String title, String subtitle)
@@ -93,12 +95,25 @@ extends AbstractGameListener<MiniWalls>
 			gameMode.setTime(System.currentTimeMillis());
 		}
 	}
+	public boolean onServerChat(MiniWalls gameMode, String message)
+	{
+		if(ChatColor.stripColor(message).matches(".* is on .* HP!")){
+			gameMode.setShotHP(message);
+			gameMode.setShotHPTime(System.currentTimeMillis());
+		}
+		return false;
+	}
 	public void onTick(MiniWalls gameMode)
 	{
 		if ((gameMode.getState() == GameState.LOBBY) && 
 			(gameMode.getTime() != -1L) && (gameMode.getTime() - System.currentTimeMillis() < 0L))
 		{
 			gameMode.setTime(-1L);
+		}
+		if ((gameMode.getShotHPTime() != -1L) && (2000L + gameMode.getShotHPTime() - System.currentTimeMillis() < 0L))
+		{
+			gameMode.setShotHP(null);
+			gameMode.setShotHPTime(-1);
 		}
 	}
 }

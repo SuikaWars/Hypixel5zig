@@ -5,18 +5,17 @@ import eu.the5zig.mod.modules.StringItem;
 import eu.the5zig.mod.The5zigAPI;
 import eu.the5zig.mod.modules.LargeTextItem;
 import eu.the5zig.mod.server.GameMode;
-import ga.hypixel5zig.Listener.HypixelListener;
+import ga.hypixel5zig.games.Hypixel;
 
-public class ShotHP extends LargeTextItem<GameMode> {
+public class ShotHP extends LargeTextItem<Hypixel> {
 	public ShotHP() {
-		super(GameMode.class);
+		super(Hypixel.class);
 	}
 	@Override
 	protected String getText()
 	{
-		if(HypixelListener.ShotHP != null){
-			String[] ShotHP = HypixelListener.ShotHP.split(",");
-			return The5zigAPI.getAPI().translate("ingame.shothp", new Object[] { ShotHP[0],ShotHP[1] });
+		if(getGameMode().getShotHP() != null){
+			return getGameMode().getShotHP();
 		}
 		return null;
 	}

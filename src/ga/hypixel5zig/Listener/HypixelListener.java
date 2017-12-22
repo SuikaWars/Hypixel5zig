@@ -12,11 +12,9 @@ public class HypixelListener extends AbstractGameListener<GameMode> {
 	private boolean wtfmap;
 	private boolean whereami;
 	private boolean arcade;
-	private long ShotHPTime;
 	public static String Server;
 	public static String Map;
 	public static String Game;
-	public static String ShotHP;
 
 	@Override
 	public Class<GameMode> getGameMode() {
@@ -77,10 +75,6 @@ public class HypixelListener extends AbstractGameListener<GameMode> {
 			this.Map = match.get(0);
 			this.wtfmap = false;
 		}
-		if (key.equals("ShotHP")) {
-			this.ShotHP = match.get(0) + "," + match.get(1);
-			this.ShotHPTime = System.currentTimeMillis();
-		}
 	}
 	@Override
 	public void onServerConnect(GameMode gameMode)
@@ -105,14 +99,6 @@ public class HypixelListener extends AbstractGameListener<GameMode> {
 			this.Server = "Limbo";	
 			this.Map = null;
 			this.Game = null;
-		}
-	}
-	public void onTick(GameMode gameMode)
-	{
-		if ((this.ShotHPTime != -1L) && (2000L + this.ShotHPTime - System.currentTimeMillis() < 0L))
-		{
-			this.ShotHP = null;
-			this.ShotHPTime = -1L;
 		}
 	}
 }

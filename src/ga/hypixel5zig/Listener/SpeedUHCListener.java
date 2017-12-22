@@ -6,6 +6,7 @@ import eu.the5zig.mod.The5zigAPI;
 import eu.the5zig.mod.server.AbstractGameListener;
 import eu.the5zig.mod.server.GameState;
 import eu.the5zig.mod.server.IPatternResult;
+import eu.the5zig.util.minecraft.ChatColor;
 import ga.hypixel5zig.games.SpeedUHC;
 
 public class SpeedUHCListener
@@ -72,7 +73,17 @@ extends AbstractGameListener<SpeedUHC>
 		gameMode.setState(GameState.LOBBY);
 		gameMode.setKills(0);
 		gameMode.setAssists(0);
+		gameMode.setShotHP(null);
+		gameMode.setShotHPTime(-1);
 		gameMode.setEarnedCoins(0);
+	}
+	public boolean onServerChat(SpeedUHC gameMode, String message)
+	{
+		if(ChatColor.stripColor(message).matches(".* is on .* HP!")){
+			gameMode.setShotHP(message);
+			gameMode.setShotHPTime(System.currentTimeMillis());
+		}
+		return false;
 	}
 	public void onTick(SpeedUHC gameMode)
 	{
@@ -84,6 +95,11 @@ extends AbstractGameListener<SpeedUHC>
 		if ((gameMode.getCageOpenTime() != -1L) && (gameMode.getCageOpenTime() - System.currentTimeMillis() < 0L))
 		{
 			gameMode.setCageOpenTime(-1L);
+		}
+		if ((gameMode.getShotHPTime() != -1L) && (2000L + gameMode.getShotHPTime() - System.currentTimeMillis() < 0L))
+		{
+			gameMode.setShotHP(null);
+			gameMode.setShotHPTime(-1);
 		}
 	}
 }

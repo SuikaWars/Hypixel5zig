@@ -4,11 +4,13 @@ import eu.the5zig.mod.server.GameMode;
 
 public abstract class Hypixel extends GameMode {
 	private String Kit;
-	private long CageOpenTime;
+	private String ShotHP;
+	private long winTime;
+	private long ShotHPTime;
 	private int Assists;
 	private int EarnedCoins;
-	private long winTime;
 	private String Team;
+	private long CageOpenTime;
 	public void setKit(String Kit1)
 	{
 		Kit = Kit1;
@@ -56,5 +58,21 @@ public abstract class Hypixel extends GameMode {
 	public String getTeam()
 	{
 		return Team;
+	}
+	public void setShotHP(String shotHP)
+	{
+		ShotHP = shotHP;
+	}
+	public String getShotHP()
+	{
+		return ShotHP;
+	}
+	public void setShotHPTime(long shotHPtime)
+	{
+		ShotHPTime = shotHPtime;
+	}
+	public long getShotHPTime()
+	{
+		return ShotHPTime;
 	}
 }

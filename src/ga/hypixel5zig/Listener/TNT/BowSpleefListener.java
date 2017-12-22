@@ -34,7 +34,7 @@ extends AbstractGameListener<BowSpleef>
 			gameMode.setState(GameState.GAME);
 			gameMode.setTime(System.currentTimeMillis());
 		}
-		if (key.startsWith("win."))
+		if (key.equals("TNT.1st"))
 		{
 			gameMode.setWinner(match.get(0));
 			gameMode.setWinTime(System.currentTimeMillis());

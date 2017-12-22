@@ -29,14 +29,14 @@ extends AbstractGameListener<TNTTag>
 		if (key.equals("canceled")) {
 			gameMode.setTime(-1L);
 		}
-		if (key.equals("TNT.start"))
+		if (key.equals("TNTTag.start"))
 		{
 			gameMode.setState(GameState.GAME);
 			gameMode.setTime(System.currentTimeMillis());
 		}
-		if (key.startsWith("win."))
+		if (key.startsWith("win.") || key.equals("TNT.1st"))
 		{
-			if(match.get(0).equals("DRAW")){
+			if(match.get(0).equals("DRAW!")){
 				gameMode.setWinTime(System.currentTimeMillis());
 				gameMode.setState(GameState.FINISHED);	
 			}else{
