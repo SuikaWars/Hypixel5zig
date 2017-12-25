@@ -81,7 +81,7 @@ extends AbstractGameListener<MiniWalls>
 			if(team.equals("RED")){
 				gameMode.setTeam("\u00A7cRed");
 			}else if(team.equals("BLUE")){
-				gameMode.setTeam("\u00A7bRed");
+				gameMode.setTeam("\u00A7bBlue");
 			}else if(team.equals("GREEN")){
 				gameMode.setTeam("\u00A7aGreen");
 			}else if(team.equals("YELLOW")){
