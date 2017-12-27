@@ -58,13 +58,13 @@ public class Main{
 				|| ((ver_major1 == cver_major1) && (ver_major2  > cver_major2))
 				|| ((ver_major1 == cver_major1) && (ver_major2 == cver_major2) && (ver_minor  > cver_minor)))
 			{
-				The5zigAPI.getAPI().createOverlay().displayMessageAndSplit("Hypixel5zig Beta\n" + The5zigAPI.getAPI().translate("hypixel5zig.update"));
-				The5zigAPI.getLogger().info("Hypixel5zig Beta: " + The5zigAPI.getAPI().translate("hypixel5zig.update"));
+				The5zigAPI.getAPI().createOverlay().displayMessageAndSplit("Hypixel5zig\n" + The5zigAPI.getAPI().translate("hypixel5zig.update"));
+				The5zigAPI.getLogger().info("Hypixel5zig: " + The5zigAPI.getAPI().translate("hypixel5zig.update"));
 				this.update = true;
 
 			}else{
-				The5zigAPI.getAPI().createOverlay().displayMessageAndSplit("Hypixel5zig Beta\n" + The5zigAPI.getAPI().translate("hypixel5zig.higherversion"));
-				The5zigAPI.getLogger().info("Hypixel5zig Beta: " + The5zigAPI.getAPI().translate("hypixel5zig.higherversion"));
+				The5zigAPI.getAPI().createOverlay().displayMessageAndSplit("Hypixel5zig\n" + The5zigAPI.getAPI().translate("hypixel5zig.higherversion"));
+				The5zigAPI.getLogger().info("Hypixel5zig: " + The5zigAPI.getAPI().translate("hypixel5zig.higherversion"));
 			}
 		} catch (IOException r) {
 			The5zigAPI.getLogger().warn("Cannot check for updates", r);
