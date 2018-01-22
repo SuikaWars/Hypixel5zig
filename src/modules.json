@@ -32,6 +32,9 @@
           "type": "KILLS"
         },
         {
+          "type": "HypixelKillStreak"
+        },
+        {
           "type": "DEATHS"
         },
         {

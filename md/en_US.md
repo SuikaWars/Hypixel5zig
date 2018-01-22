@@ -1,5 +1,5 @@
 # Hypixel5zig
-## Select Language: [English](en_US.md) [æ—¥æœ¬èªž](ja_JP.md)
+## Select Language: [English](en_US.md) [“ú–{Œê](ja_JP.md)
 The 5zig mod plugin for the Hypixel Network.
 ## Features
 ### General
@@ -24,6 +24,7 @@ The 5zig mod plugin for the Hypixel Network.
 ### Mini Walls
 - Countdown
 - Kills
+- Killstreak
 - Win message
 - Team
 - Earned Coins
@@ -31,7 +32,7 @@ The 5zig mod plugin for the Hypixel Network.
 ### TNT Run
 - Countdown
 - Earned Coins
-- (Win message)
+- Win message
 ### PVP Run
 - Countdown
 - Win message
@@ -40,7 +41,7 @@ The 5zig mod plugin for the Hypixel Network.
 ### Bow Spleef
 - Countdown
 - Earned Coins
-- (Win message)
+- Win message
 ### TNT Tag
 - Countdown
 - Win message
@@ -49,6 +50,7 @@ The 5zig mod plugin for the Hypixel Network.
 - Countdown
 - Win message
 - Kills
+- Killstreak
 - Assists
 - Team
 - Earned Coins
@@ -57,6 +59,22 @@ The 5zig mod plugin for the Hypixel Network.
 - Countdown
 - Earned Coins
 - (Theme) - Coming soon
+### Quakecraft
+- Countdown
+- Earned Coins
+- Team
+- Win message
+- Kills
+- Killstreak
+- (Deaths)
+### Paintball
+- Countdown
+- Earned Coins
+- Team
+- Win message
+- Kills
+- Killstreak
+- (Deaths)
 
 () - not work
 ## Downloads

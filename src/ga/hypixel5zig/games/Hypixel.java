@@ -7,6 +7,8 @@ public abstract class Hypixel extends GameMode {
 	private String ShotHP;
 	private long winTime;
 	private long ShotHPTime;
+	private int KillStreak;
+	private int WinStreak;
 	private int Assists;
 	private int EarnedCoins;
 	private String Team;
@@ -26,6 +28,22 @@ public abstract class Hypixel extends GameMode {
 	public long getCageOpenTime()
 	{
 		return CageOpenTime;
+	}
+	public void setKillstreak(int Killstreak)
+	{
+		KillStreak = Killstreak;
+	}
+	public int getKillstreak()
+	{
+		return KillStreak;
+	}
+	public void setWinStreak(int Winstreak)
+	{
+		WinStreak = Winstreak;
+	}
+	public int getWinStreak()
+	{
+		return WinStreak;
 	}
 	public void setAssists(int Assists1)
 	{

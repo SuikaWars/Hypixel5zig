@@ -79,7 +79,7 @@ extends AbstractGameListener<SpeedUHC>
 	}
 	public boolean onServerChat(SpeedUHC gameMode, String message)
 	{
-		if(ChatColor.stripColor(message).matches(".* is on .* HP!")){
+		if(ChatColor.stripColor(message).matches(".[a-zA-Z0-9_]* is on [0-9\\.]* HP!")){
 			gameMode.setShotHP(message);
 			gameMode.setShotHPTime(System.currentTimeMillis());
 		}

@@ -46,12 +46,14 @@ extends AbstractGameListener<TNTWizards>
 			}
 			if (key.startsWith("Wizards.kill.")) {
 				gameMode.setKills(gameMode.getKills() + 1);
+				gameMode.setKillstreak(gameMode.getKillstreak() + 1);
 			}
 			if (key.equals("Wizards.assist")) {
 				gameMode.setAssists(gameMode.getAssists() + 1);
 			}
 			if (key.startsWith("Wizards.death.")) {
 				gameMode.setDeaths(gameMode.getDeaths() + 1);
+				gameMode.setKillstreak(0);
 			}
 			if (key.startsWith("Wizards.kit.")) {
 				gameMode.setKit(match.get(0));
@@ -83,9 +85,11 @@ extends AbstractGameListener<TNTWizards>
 		gameMode.setState(GameState.LOBBY);
 		gameMode.setKills(0);
 		gameMode.setDeaths(0);
+		gameMode.setAssists(0);
 		gameMode.setKit(null);
 		gameMode.setTeam(null);
 		gameMode.setEarnedCoins(0);
+		gameMode.setKillstreak(0);
 		this.rejoin = false;
 	}
 	public void onTick(TNTWizards gameMode)

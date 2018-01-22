@@ -39,9 +39,11 @@ extends AbstractGameListener<MiniWalls>
 		}
 		if (key.startsWith("MiniWalls.kill.")) {
 			gameMode.setKills(gameMode.getKills() + 1);
+			gameMode.setKillstreak(gameMode.getKillstreak() + 1);
 		}
 		if (key.startsWith("MiniWalls.death.")) {
 			gameMode.setDeaths(gameMode.getDeaths() + 1);
+			gameMode.setKillstreak(0);
 		}
 		if (key.startsWith("MiniWalls.team.")) {
 			if(match.get(0).equals("Red")){
@@ -72,6 +74,7 @@ extends AbstractGameListener<MiniWalls>
 		gameMode.setShotHP(null);
 		gameMode.setShotHPTime(-1);
 		gameMode.setEarnedCoins(0);
+		gameMode.setKillstreak(0);
 	}
 	public void onTitle(MiniWalls gameMode, String title, String subtitle)
 	{
@@ -97,7 +100,7 @@ extends AbstractGameListener<MiniWalls>
 	}
 	public boolean onServerChat(MiniWalls gameMode, String message)
 	{
-		if(ChatColor.stripColor(message).matches(".* is on .* HP!")){
+		if(ChatColor.stripColor(message).matches("[a-zA-Z0-9_]* is on [0-9\\.]* HP!")){
 			gameMode.setShotHP(message);
 			gameMode.setShotHPTime(System.currentTimeMillis());
 		}

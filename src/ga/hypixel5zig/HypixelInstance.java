@@ -5,6 +5,7 @@ import eu.the5zig.mod.The5zigAPI;
 import ga.hypixel5zig.Listener.*;
 import ga.hypixel5zig.Listener.TNT.*;
 import ga.hypixel5zig.Listener.Arcade.*;
+import ga.hypixel5zig.Listener.Classic.*;
 
 public class HypixelInstance extends ServerInstance {
 	public static boolean IsHypixel(String host) {
@@ -24,6 +25,8 @@ public class HypixelInstance extends ServerInstance {
 		getGameListener().registerListener(new TNTWizardsListener());
 		getGameListener().registerListener(new ArcadeGamesListener());
 		getGameListener().registerListener(new MiniWallsListener());
+		getGameListener().registerListener(new QuakecraftListener());
+		getGameListener().registerListener(new PaintballListener());
 	}
 
 	@Override

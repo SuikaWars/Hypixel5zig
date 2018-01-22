@@ -23,7 +23,7 @@ import org.apache.http.HttpResponse;
 public class Main{
 	private String latest;
 	private boolean update;
-	public static final String version = "1.2.1";
+	public static final String version = "1.3.0";
 	@EventHandler(priority = EventHandler.Priority.LOW)
 	public void onLoad(LoadEvent event) {
 		The5zigAPI.getAPI().registerServerInstance(this, HypixelInstance.class);
@@ -32,6 +32,7 @@ public class Main{
 		The5zigAPI.getAPI().registerModuleItem(this, "HypixelMap", MapItem.class, "Hypixel5zig");
 		The5zigAPI.getAPI().registerModuleItem(this, "HypixelKit", KitItem.class, "Hypixel5zig");
 		The5zigAPI.getAPI().registerModuleItem(this, "HypixelAssists", AssistsItem.class, "Hypixel5zig");
+		The5zigAPI.getAPI().registerModuleItem(this, "HypixelKillStreak", KillStreakItem.class, "Hypixel5zig");
 		The5zigAPI.getAPI().registerModuleItem(this, "HypixelTeam", TeamItem.class, "Hypixel5zig");
 		The5zigAPI.getAPI().registerModuleItem(this, "HypixelCoins", CoinsItem.class, "Hypixel5zig");
 		The5zigAPI.getAPI().registerModuleItem(this, "HypixelCageOpen", CageOpenItem.class, "Hypixel5zig");
@@ -73,7 +74,7 @@ public class Main{
 	@EventHandler
 	public void onWorldTick(WorldTickEvent event) {
 		if(this.update == true && The5zigAPI.getAPI().isInWorld()){
-			The5zigAPI.getAPI().messagePlayer("[Hypixel5zig] " + The5zigAPI.getAPI().translate("hypixel5zig.update") + ": \u00A7e" + this.latest);
+			The5zigAPI.getAPI().messagePlayer("[Hypixel5zig] " + The5zigAPI.getAPI().translate("hypixel5zig.update") + " : \u00A7e" + this.latest);
 			this.update = false;
 		}
 	}

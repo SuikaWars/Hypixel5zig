@@ -35,12 +35,8 @@ extends AbstractGameListener<SkyWars>
 			gameMode.setState(GameState.GAME);
 			gameMode.setTime(System.currentTimeMillis());
 		}
-		if (key.startsWith("kill.")) {
-			if (The5zigAPI.getAPI().getGameProfile().getName().equals(match.get(1))) {
-				gameMode.setKills(gameMode.getKills() + 1);
-			} else if (The5zigAPI.getAPI().getGameProfile().getName().equals(match.get(0))) {
-      	//died 
-			}
+		if (key.equals("SkyWars.kill")) {
+			gameMode.setKills(gameMode.getKills() + 1);
 		}
 		if (key.equals("assist")) {
 			gameMode.setAssists(gameMode.getAssists() + 1);
@@ -79,7 +75,7 @@ extends AbstractGameListener<SkyWars>
 	}
 	public boolean onServerChat(SkyWars gameMode, String message)
 	{
-		if(ChatColor.stripColor(message).matches(".* is on .* HP!")){
+		if(ChatColor.stripColor(message).matches("[a-zA-Z0-9_]* is on [0-9\\.]* HP!")){
 			gameMode.setShotHP(message);
 			gameMode.setShotHPTime(System.currentTimeMillis());
 		}

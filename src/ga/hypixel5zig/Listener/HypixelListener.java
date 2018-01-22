@@ -94,7 +94,7 @@ public class HypixelListener extends AbstractGameListener<GameMode> {
 	@Override
 	public void onTeleport(GameMode gameMode , double x , double y , double z , float yaw , float pitch)
 	{
-		if(x == -23.5 && y == 31 && z == 21.5 && yaw == -90.0 && pitch == 0.0 && getGameListener().getCurrentLobby().contains("lobby")){
+		if(x == -23.5 && y == 31 && z == 21.5 && yaw == -90.0 && pitch == 0.0){
 			getGameListener().switchLobby("Limbo");
 			this.Server = "Limbo";	
 			this.Map = null;

@@ -1,63 +1,81 @@
 # Hypixel5zig
-## Select Language: [English](en_US.md) [æ—¥æœ¬èª](ja_JP.md)
-Hypixel Networkå‘ã‘The 5zig Modã®ãƒ—ãƒ©ã‚°ã‚¤ãƒ³
-## ä»•æ§˜
-### ä¸€èˆ¬
-- ã‚µãƒ¼ãƒãƒ¼
-- ãƒãƒƒãƒ—(Arcade gamesã¯ã‚µãƒãƒ¼ãƒˆã•ã‚Œã¦ã„ã¾ã›ã‚“ã€‚)
+## Select Language: [English](en_US.md) [“ú–{Œê](ja_JP.md)
+Hypixel NetworkŒü‚¯The 5zig Mod‚Ìƒvƒ‰ƒOƒCƒ“
+## d—l
+### ˆê”Ê
+- ƒT[ƒo[
+- ƒ}ƒbƒv(Arcade games‚ÍƒTƒ|[ƒg‚³‚ê‚Ä‚¢‚Ü‚¹‚ñB)
 ### SkyWars
-- ã‚«ã‚¦ãƒ³ãƒˆãƒ€ã‚¦ãƒ³
+- ƒJƒEƒ“ƒgƒ_ƒEƒ“
 - Kills
 - Assists
-- ã‚­ãƒƒãƒˆ
+- ƒLƒbƒg
 - Win message
-- ç²å¾—ã‚³ã‚¤ãƒ³
-- ã‚±ãƒ¼ã‚¸ãŒé–‹ãã¾ã§ã®æ™‚é–“(Teams/Mega/Ranked)
+- Šl“¾ƒRƒCƒ“
+- ƒP[ƒW‚ªŠJ‚­‚Ü‚Å‚ÌŠÔ(Teams/Mega/Ranked)
 ### Speed UHC
-- ã‚«ã‚¦ãƒ³ãƒˆãƒ€ã‚¦ãƒ³
+- ƒJƒEƒ“ƒgƒ_ƒEƒ“
 - Kills
 - Assists
-- ã‚­ãƒƒãƒˆ
+- ƒLƒbƒg
 - Win message
-- ç²å¾—ã‚³ã‚¤ãƒ³
-- ã‚±ãƒ¼ã‚¸ãŒé–‹ãã¾ã§ã®æ™‚é–“(Teams)
+- Šl“¾ƒRƒCƒ“
+- ƒP[ƒW‚ªŠJ‚­‚Ü‚Å‚ÌŠÔ(Teams)
 ### Mini Walls
-- ã‚«ã‚¦ãƒ³ãƒˆãƒ€ã‚¦ãƒ³
+- ƒJƒEƒ“ƒgƒ_ƒEƒ“
 - Kills
+- Killstreak
 - Win message
-- ãƒãƒ¼ãƒ 
-- ç²å¾—ã‚³ã‚¤ãƒ³
+- ƒ`[ƒ€
+- Šl“¾ƒRƒCƒ“
 - (Deaths)
 ### TNT Run
-- ã‚«ã‚¦ãƒ³ãƒˆãƒ€ã‚¦ãƒ³
-- ç²å¾—ã‚³ã‚¤ãƒ³
-- (Win message)
+- ƒJƒEƒ“ƒgƒ_ƒEƒ“
+- Šl“¾ƒRƒCƒ“
+- Win message
 ### PVP Run
-- ã‚«ã‚¦ãƒ³ãƒˆãƒ€ã‚¦ãƒ³
+- ƒJƒEƒ“ƒgƒ_ƒEƒ“
 - Win message
 - Kills
-- ç²å¾—ã‚³ã‚¤ãƒ³
+- Šl“¾ƒRƒCƒ“
 ### Bow Spleef
-- ã‚«ã‚¦ãƒ³ãƒˆãƒ€ã‚¦ãƒ³
-- ç²å¾—ã‚³ã‚¤ãƒ³
-- (Win message)
-### TNT Tag
-- ã‚«ã‚¦ãƒ³ãƒˆãƒ€ã‚¦ãƒ³
+- ƒJƒEƒ“ƒgƒ_ƒEƒ“
+- Šl“¾ƒRƒCƒ“
 - Win message
-- ç²å¾—ã‚³ã‚¤ãƒ³
+### TNT Tag
+- ƒJƒEƒ“ƒgƒ_ƒEƒ“
+- Win message
+- Šl“¾ƒRƒCƒ“
 ### TNT Wizards
-- ã‚«ã‚¦ãƒ³ãƒˆãƒ€ã‚¦ãƒ³
+- ƒJƒEƒ“ƒgƒ_ƒEƒ“
 - Win message
 - Kills
 - Assists
-- ãƒãƒ¼ãƒ 
-- ç²å¾—ã‚³ã‚¤ãƒ³
+- ƒ`[ƒ€
+- Šl“¾ƒRƒCƒ“
+- Killstreak
 - (Deaths)
 ### Build Battle
-- ã‚«ã‚¦ãƒ³ãƒˆãƒ€ã‚¦ãƒ³
-- ç²å¾—ã‚³ã‚¤ãƒ³
-- (ãƒ†ãƒ¼ãƒ) - Coming soon
+- ƒJƒEƒ“ƒgƒ_ƒEƒ“
+- Šl“¾ƒRƒCƒ“
+- (ƒe[ƒ}) - Coming soon
+### Quakecraft
+- ƒJƒEƒ“ƒgƒ_ƒEƒ“
+- Šl“¾ƒRƒCƒ“
+- ƒ`[ƒ€
+- Win message
+- Kills
+- Killstreak
+- (Deaths)
+### Paintball
+- ƒJƒEƒ“ƒgƒ_ƒEƒ“
+- Šl“¾ƒRƒCƒ“
+- ƒ`[ƒ€
+- Win message
+- Kills
+- Killstreak
+- (Deaths)
 
-() - å‹•ä½œã—ã¦ã„ãªã„
-## ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰
-[Hypixel5zigã‚’ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰](https://github.com/SuikaWars/Hypixel5zig/releases/)
+() - “®ì‚µ‚Ä‚¢‚È‚¢
+## ƒ_ƒEƒ“ƒ[ƒh
+[Hypixel5zig‚ğƒ_ƒEƒ“ƒ[ƒh](https://github.com/SuikaWars/Hypixel5zig/releases/)
