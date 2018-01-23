@@ -29,7 +29,7 @@ extends AbstractGameListener<BuildBattle>
 		if (key.equals("canceled")) {
 			gameMode.setTime(-1L);
 		}
-		if (key.equals("coin")) {
+		if (key.startsWith("coin.")) {
 			gameMode.setEarnedCoins(gameMode.getEarnedCoins() + Integer.parseInt(match.get(0)));
 		}
 		if (key.startsWith("BuildBattle.theme.")) {

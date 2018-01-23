@@ -41,7 +41,7 @@ extends AbstractGameListener<SkyWars>
 		if (key.equals("assist")) {
 			gameMode.setAssists(gameMode.getAssists() + 1);
 		}
-		if (key.equals("coin")) {
+		if (key.startsWith("coin.")) {
 			gameMode.setEarnedCoins(gameMode.getEarnedCoins() + Integer.parseInt(match.get(0)));
 		}
 		if (key.startsWith("win."))

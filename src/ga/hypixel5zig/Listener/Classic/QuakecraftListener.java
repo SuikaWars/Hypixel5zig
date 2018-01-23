@@ -56,7 +56,7 @@ extends AbstractGameListener<Quakecraft>
 					gameMode.setKillstreak(0);
 				}
 			}
-			if (key.equals("coin")) {
+			if (key.startsWith("coin.")) {
 				gameMode.setEarnedCoins(gameMode.getEarnedCoins() + Integer.parseInt(match.get(0)));
 			}
 			if (key.startsWith("win."))

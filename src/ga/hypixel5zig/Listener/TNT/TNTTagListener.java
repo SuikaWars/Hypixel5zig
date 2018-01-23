@@ -46,7 +46,7 @@ extends AbstractGameListener<TNTTag>
 			}
 
 		}
-		if (key.equals("coin")) {
+		if (key.startsWith("coin.")) {
 			gameMode.setEarnedCoins(gameMode.getEarnedCoins() + Integer.parseInt(match.get(0)));
 		}
 	}

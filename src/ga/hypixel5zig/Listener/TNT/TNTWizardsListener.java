@@ -41,7 +41,7 @@ extends AbstractGameListener<TNTWizards>
 				gameMode.setState(GameState.GAME);
 				gameMode.setTime(System.currentTimeMillis());
 			}
-			if (key.equals("coin")) {
+			if (key.startsWith("coin.")) {
 				gameMode.setEarnedCoins(gameMode.getEarnedCoins() + Integer.parseInt(match.get(0)));
 			}
 			if (key.startsWith("Wizards.kill.")) {
