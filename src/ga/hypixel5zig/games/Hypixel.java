@@ -5,7 +5,6 @@ import eu.the5zig.mod.server.GameMode;
 public abstract class Hypixel extends GameMode {
 	private String Kit;
 	private String ShotHP;
-	private long winTime;
 	private long ShotHPTime;
 	private int KillStreak;
 	private int WinStreak;
@@ -60,14 +59,6 @@ public abstract class Hypixel extends GameMode {
 	public int getEarnedCoins()
 	{
 		return EarnedCoins;
-	}
-	public long getWinTime()
-	{
-		return this.winTime;
-	}
-	public void setWinTime(long winTime1)
-	{
-		winTime = winTime1;
 	}
 	public void setTeam(String team)
 	{

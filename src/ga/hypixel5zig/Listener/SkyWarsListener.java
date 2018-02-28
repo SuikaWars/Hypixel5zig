@@ -47,7 +47,6 @@ extends AbstractGameListener<SkyWars>
 		if (key.startsWith("win."))
 		{
 			gameMode.setWinner(match.get(0));
-			gameMode.setWinTime(System.currentTimeMillis());
 			gameMode.setState(GameState.FINISHED);
 		}
 		if (key.startsWith("kit."))
@@ -63,7 +62,6 @@ extends AbstractGameListener<SkyWars>
 	public void onServerConnect(SkyWars gameMode)
 	{
 		gameMode.setKit(null);
-		gameMode.setWinTime(-1L);
 		gameMode.setWinner(null);
 		gameMode.setTime(-1L);
 		gameMode.setState(GameState.LOBBY);

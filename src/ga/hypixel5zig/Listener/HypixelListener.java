@@ -12,6 +12,8 @@ public class HypixelListener extends AbstractGameListener<GameMode> {
 	private boolean wtfmap;
 	private boolean whereami;
 	private boolean arcade;
+	private boolean getgame;
+	private long time;
 	public static String Server;
 	public static String Map;
 	public static String Game;
@@ -34,7 +36,7 @@ public class HypixelListener extends AbstractGameListener<GameMode> {
 			if((match.get(0).startsWith("mega") || match.get(0).startsWith("mini")) && !(match.get(0).contains("lobby"))){
 				getGameListener().sendAndIgnore("/wtfmap", "wtfmap");
 				this.wtfmap = true;
-				if(The5zigAPI.getAPI().getSideScoreboard().getTitle() != null){
+				if(The5zigAPI.getAPI().getSideScoreboard().getTitle() != null && The5zigAPI.getAPI().getSideScoreboard().getTitle().equals("Prescoreboard") != true){
 					String[] Scoreboard = ChatColor.stripColor(The5zigAPI.getAPI().getSideScoreboard().getTitle()).split(" ");
 					String game = "";
 					for(String key1 : Scoreboard){
@@ -44,14 +46,9 @@ public class HypixelListener extends AbstractGameListener<GameMode> {
 							game = game + " " + key1.substring(0, 1).toUpperCase() + key1.substring(1).toLowerCase();
 						}
 					}
-					game = game.replace("Skywars","SkyWars").replace("Skyclash","SkyClash").replace("Blitz Sg","Blitz SG").replace("Hypixel","UHC Champions").replace("Speed Uhc","Speed UHC").replace("Vampirez","VampireZ").replace("Tnt","TNT").replace(" The"," the").replace(" And"," and");
-					if(game.equals("The TNT Games")){
-						for(String key2 : The5zigAPI.getAPI().getSideScoreboard().getLines().keySet()){
-							key2 = ChatColor.stripColor(key2);
-							if(key2.startsWith("Game: ")){
-								game = key2.replace("Game: ","").replace("Bow Sple","Bow Spleef").replace("TNT Wiza","TNT Wizards");
-							}
-						}
+					game = game.replace("Skywars","SkyWars").replace("Skyclash","SkyClash").replace("Blitz Sg","Blitz SG").replace("Speed Uhc","Speed UHC").replace("Vampirez","VampireZ").replace("Tnt","TNT").replace(" The"," the").replace(" And"," and");
+					if(game.equals("Hypixel")){
+						game = "UHC Champions";
 					}
 					if(game.equals("Arcade Games")){
 						getGameListener().sendAndIgnore("/wtfmap", "wtfmap");
@@ -61,6 +58,8 @@ public class HypixelListener extends AbstractGameListener<GameMode> {
 					}
 				}else{
 					this.Game = null;
+					this.getgame = true;
+					this.time = System.currentTimeMillis();
 				}
 			}
 			getGameListener().switchLobby(match.get(0));
@@ -99,6 +98,17 @@ public class HypixelListener extends AbstractGameListener<GameMode> {
 			this.Server = "Limbo";	
 			this.Map = null;
 			this.Game = null;
+		}
+	}
+	@Override
+	public void onTick(GameMode gameMode)
+	{
+		if(this.getgame == true){
+			if(System.currentTimeMillis() + 1000 < -1){
+				this.getgame = false;
+				this.whereami = true;
+				getGameListener().sendAndIgnore("/whereami", "whereami");
+			}
 		}
 	}
 }

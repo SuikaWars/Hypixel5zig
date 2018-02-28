@@ -3,7 +3,6 @@ package ga.hypixel5zig;
 import eu.the5zig.mod.server.ServerInstance;
 import eu.the5zig.mod.The5zigAPI;
 import ga.hypixel5zig.Listener.*;
-import ga.hypixel5zig.Listener.TNT.*;
 import ga.hypixel5zig.Listener.Arcade.*;
 import ga.hypixel5zig.Listener.Classic.*;
 
@@ -18,11 +17,6 @@ public class HypixelInstance extends ServerInstance {
 		getGameListener().registerListener(new SpeedUHCListener());
 		getGameListener().registerListener(new BuildBattleListener());
 		getGameListener().registerListener(new TNTGamesListener());
-		getGameListener().registerListener(new TNTRunListener());
-		getGameListener().registerListener(new PVPRunListener());
-		getGameListener().registerListener(new BowSpleefListener());
-		getGameListener().registerListener(new TNTTagListener());
-		getGameListener().registerListener(new TNTWizardsListener());
 		getGameListener().registerListener(new ArcadeGamesListener());
 		getGameListener().registerListener(new MiniWallsListener());
 		getGameListener().registerListener(new QuakecraftListener());

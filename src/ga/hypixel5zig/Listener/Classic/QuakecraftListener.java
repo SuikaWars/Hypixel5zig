@@ -67,7 +67,6 @@ extends AbstractGameListener<Quakecraft>
 				}else{
 					gameMode.setWinner(match.get(0));
 				}
-				gameMode.setWinTime(System.currentTimeMillis());
 			}
 		}
 
@@ -87,7 +86,6 @@ extends AbstractGameListener<Quakecraft>
 	}
 	public void onServerConnect(Quakecraft gameMode)
 	{
-		gameMode.setWinTime(-1L);
 		gameMode.setWinner(null);
 		gameMode.setTime(-1L);
 		gameMode.setState(GameState.LOBBY);

@@ -34,7 +34,6 @@ extends AbstractGameListener<MiniWalls>
 		if (key.startsWith("win."))
 		{
 			gameMode.setWinner(match.get(0) + " Team");
-			gameMode.setWinTime(System.currentTimeMillis());
 			gameMode.setState(GameState.FINISHED);	
 		}
 		if (key.startsWith("MiniWalls.kill.")) {
@@ -64,7 +63,6 @@ extends AbstractGameListener<MiniWalls>
 	}
 	public void onServerConnect(MiniWalls gameMode)
 	{
-		gameMode.setWinTime(-1L);
 		gameMode.setWinner(null);
 		gameMode.setTime(-1L);
 		gameMode.setState(GameState.LOBBY);

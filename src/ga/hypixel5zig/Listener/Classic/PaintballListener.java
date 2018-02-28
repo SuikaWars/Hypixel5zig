@@ -58,7 +58,6 @@ extends AbstractGameListener<Paintball>
 		{
 			gameMode.setState(GameState.FINISHED);
 			gameMode.setWinner(match.get(0) + " Team");
-			gameMode.setWinTime(System.currentTimeMillis());
 		}
 		if (key.startsWith("Paintball.team.")) {
 			if(match.get(0).equals("RED")){
@@ -82,7 +81,6 @@ extends AbstractGameListener<Paintball>
 	}
 	public void onServerConnect(Paintball gameMode)
 	{
-		gameMode.setWinTime(-1L);
 		gameMode.setWinner(null);
 		gameMode.setTime(-1L);
 		gameMode.setState(GameState.LOBBY);

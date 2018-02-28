@@ -23,7 +23,7 @@ import org.apache.http.HttpResponse;
 public class Main{
 	private String latest;
 	private boolean update;
-	public static final String version = "1.3.2";
+	public static final String version = "1.3.3";
 	@EventHandler(priority = EventHandler.Priority.LOW)
 	public void onLoad(LoadEvent event) {
 		The5zigAPI.getAPI().registerServerInstance(this, HypixelInstance.class);
